@@ -44,71 +44,73 @@ function quadratic() {
 }
 quadratic();
 
-if(confirm('Чи бажаєте почати гру?')) {
-    sessionStorage.clear();
-    check:
-        while(true) {
-            var a = Math.random() * 5;
-            var rand = Math.floor(a);
-            var first = +prompt('У вас є три спроби, щоб вгадати ціле число від 0 до 5. Введіть число:');
-            var second = +prompt('Друга спроба. Введіть число:');
-            var third = +prompt('Третя спроба. Введіть число:');
-            switch(rand) {
-                case first:
-                    var j = +sessionStorage.getItem('prize');
-                    if(j > 0) {
-                        var i = +30;
-                    }
-                    else {
-                        i = +10;
-                    }
-                    var prize = sessionStorage.setItem('prize', j + i);
-                    if(confirm('Ви виграли, чи хочете продовжити гру?')) {
-                        continue check;
-                    } else {
-                        console.log('Дякуємо за гру, ви виграли ' + sessionStorage.getItem('prize') + '$');
-                        break check;
-                    }
-                case second:
-                    var j = +sessionStorage.getItem('prize');
-                    if(j > 0) {
-                        var i = +15;
-                    }
-                    else {
-                        i = +5;
-                    }
-                    var prize = sessionStorage.setItem('prize', j + i);
-                    if(confirm('Ви виграли, чи хочете продовжити гру?')) {
-                        continue check;
-                    } else {
-                        console.log('Дякуємо за гру, ви виграли ' + sessionStorage.getItem('prize') + '$');
-                        break check;
-                    }
-                case third:
-                    var j = +sessionStorage.getItem('prize')
-                    if(j > 0) {
-                        var i = +6;
-                    }
-                    else {
-                        i = +2;
-                    }
-                    var prize = sessionStorage.setItem('prize', j + i);
-                    if(confirm('Ви виграли, чи хочете продовжити гру?')) {
-                        continue check;
-                    } else {
-                        console.log('Дякуємо за гру, ви виграли ' + sessionStorage.getItem('prize') + '$');
-                        break check;
-                    }
-                default:
-                    if(confirm('Ваш виграш 0$. Чи бажаєте зіграти ще раз?')) {
-                        continue check;
-                    }
-                    else {
-                        console.log('Дякуємо за гру, ви виграли ' + Number(sessionStorage.getItem('prize')) + '$');
-                        break check;
-                    }
+function guessingGame() {
+    if (confirm('Чи бажаєте почати гру?')) {
+        sessionStorage.clear();
+        beginGame();
+    } else {
+        console.log('Сьогодні ви не виграли мільйон, а могли');
+    }
+}
+guessingGame();
+
+function beginGame() {
+    check: while (true) {
+        var a = Math.random() * 5;
+        var rand = Math.floor(a);
+        var first = +prompt('У вас є три спроби, щоб вгадати ціле число від 0 до 5. Введіть число:');
+        var second = +prompt('Друга спроба. Введіть число:');
+        var third = +prompt('Третя спроба. Введіть число:');
+        switch (rand) {
+        case first:
+            var j = +sessionStorage.getItem('prize');
+            if (j > 0) {
+                var i = +30;
+            } else {
+                i = +10;
+            }
+            var prize = sessionStorage.setItem('prize', j + i);
+            if (confirm('Ви виграли, чи хочете продовжити гру?')) {
+                continue check;
+            } else {
+                console.log('Дякуємо за гру, ви виграли ' + sessionStorage.getItem('prize') + '$');
+                break check;
+            }
+        case second:
+            var j = +sessionStorage.getItem('prize');
+            if (j > 0) {
+                var i = +15;
+            } else {
+                i = +5;
+            }
+            var prize = sessionStorage.setItem('prize', j + i);
+            if (confirm('Ви виграли, чи хочете продовжити гру?')) {
+                continue check;
+            } else {
+                console.log('Дякуємо за гру, ви виграли ' + sessionStorage.getItem('prize') + '$');
+                break check;
+            }
+        case third:
+            var j = +sessionStorage.getItem('prize')
+            if (j > 0) {
+                var i = +6;
+            } else {
+                i = +2;
+            }
+            var prize = sessionStorage.setItem('prize', j + i);
+            if (confirm('Ви виграли, чи хочете продовжити гру?')) {
+                continue check;
+            } else {
+                console.log('Дякуємо за гру, ви виграли ' + sessionStorage.getItem('prize') + '$');
+                break check;
+            }
+        default:
+            if (confirm('Ваш виграш 0$. Чи бажаєте зіграти ще раз?')) {
+                continue check;
+            } else {
+                console.log('Дякуємо за гру, ви виграли ' + Number(sessionStorage.getItem('prize')) + '$');
+                break check;
             }
         }
-} else {
-    console.log('Сьогодні ви не виграли мільйон, а могли');
+    }
 }
