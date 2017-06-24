@@ -55,7 +55,8 @@ function guessingGame() {
 guessingGame();
 
 function beginGame() {
-    check: while (true) {
+check: 
+	while (true) {
         var a = Math.random() * 5;
         var rand = Math.floor(a);
         var first = +prompt('У вас є три спроби, щоб вгадати ціле число від 0 до 5. Введіть число:');
