@@ -1,39 +1,53 @@
-/*var a = +prompt('введіть число a');
-var b = +prompt('введіть число b');
-var result = a + b;
-console.log (result);
-
-var a = +prompt('введіть число a');
-var b = +prompt('введіть число b');
-var result = a + b;
-console.log (result);
-
-var a = +prompt('введіть число a');
-var b = +prompt('введіть число b');
-var result = a + b;
-console.log (result);
-
-var a = +prompt('input a');
-var b = +prompt('input b');
-var result = a + b;
-console.log (result);
-
-var a = +prompt('введіть число a');
-var b = +prompt('введіть число b');
-var c = +prompt('введіть число c');
-var res1 = -b/2/a+Math.pow(Math.pow(b,2)-4*a*c,0.5)/2/a;
-var res2 = -b/2/a-Math.pow(Math.pow(b,2)-4*a*c,0.5)/2/a;
-if (isNaN(res1) && isNaN(res2)) {
-	console.log('Немає розвязків рівняння');
-	}  else {
-	console.log('x1 = ' + res1, 'x2 = ' +res2);
+function addition() {
+	var a = +prompt('введіть число a');
+	var b = +prompt('введіть число b');
+	var result = a + b;
+	console.log (result);
 }
-*/
+addition();
+
+function subtraction() {
+	var a = +prompt('введіть число a');
+	var b = +prompt('введіть число b');
+	var result = a - b;
+	console.log (result);
+}
+subtraction();
+
+function multiplication() {
+	var a = +prompt('введіть число a');
+	var b = +prompt('введіть число b');
+	var result = a * b;
+	console.log (result);
+}
+multiplication();
+
+function quotient() {
+	var a = +prompt('введіть число a');
+	var b = +prompt('введіть число b');
+	var result = a % b;
+	console.log (result);
+}
+quotient(); 
+
+function quadratic() {
+	var a = +prompt('введіть число a');
+	var b = +prompt('введіть число b');
+	var c = +prompt('введіть число c');
+	var res1 = -b/2/a+Math.pow(Math.pow(b,2)-4*a*c,0.5)/2/a;
+	var res2 = -b/2/a-Math.pow(Math.pow(b,2)-4*a*c,0.5)/2/a;
+		if (isNaN(res1) && isNaN(res2)) {
+		console.log('Немає розвязків рівняння');
+		}  else {
+		console.log('x1 = ' + res1, 'x2 = ' +res2);
+	}
+}
+quadratic();
 
 if (confirm ('Чи бажаєте почати гру?')) { 
 sessionStorage.clear();
 check: 
-	while  (true) {
+	while (true) {
 	var a = Math.random()*5;
 	var rand = Math.floor(a);
 	var first = +prompt('У вас є три спроби, щоб вгадати ціле число від 0 до 5. Введіть число:');
@@ -98,4 +112,3 @@ check:
 }  else {
 	console.log ('Сьогодні ви не виграли мільйон, а могли');
 }
-		
