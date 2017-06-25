@@ -74,34 +74,35 @@ function beginGame() {
 	switch (rand) {
         case first:
             var j = +sessionStorage.getItem('prize');
-
-            if (j > 0) {
+			var prize;
+			
+			if (j > 0) {
                 var i = +30;
             } else {
                 i = +10;
             }
 			
-			var prize = sessionStorage.setItem('prize', j + i);
-			
+			prize = sessionStorage.setItem('prize', j + i);
 		getGameresult();
 		break;
 			
         case second:
             var j = +sessionStorage.getItem('prize');
-
-            if (j > 0) {
+			var prize;
+            
+			if (j > 0) {
                 var i = +15;
             } else {
                 i = +5;
             }
 			
-			var prize = sessionStorage.setItem('prize', j + i);
-			
+			prize = sessionStorage.setItem('prize', j + i);
 		getGameresult();
 		break;
 		
         case third:
-            var j = +sessionStorage.getItem('prize')
+            var j = +sessionStorage.getItem('prize');
+			var prize; 
 			
 			if (j > 0) {
                 var i = +6;
@@ -109,8 +110,7 @@ function beginGame() {
                 i = +2;
             }
 			
-			var prize = sessionStorage.setItem('prize', j + i);
-			
+			prize = sessionStorage.setItem('prize', j + i);
 		getGameresult();
 		break;
         
