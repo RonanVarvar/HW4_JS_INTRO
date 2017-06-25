@@ -82,7 +82,7 @@ function beginGame() {
             }
 			
 			var prize = sessionStorage.setItem('prize', j + i);
-            
+			
 		getGameresult();
 		break;
 			
@@ -110,6 +110,7 @@ function beginGame() {
             }
 			
 			var prize = sessionStorage.setItem('prize', j + i);
+			
 		getGameresult();
 		break;
         
