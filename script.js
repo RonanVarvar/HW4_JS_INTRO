@@ -2,33 +2,37 @@ function getAddition() {
     var a = +prompt('введіть число a');
     var b = +prompt('введіть число b');
     var result = a + b;
-    console.log(result);
+    
+	return result;
 }
-getAddition();
+console.log( getAddition() );
 
 function getSubtraction() {
     var a = +prompt('введіть число a');
     var b = +prompt('введіть число b');
     var result = a - b;
-    console.log(result);
+	
+	return result;
 }
-getSubtraction();
+console.log( getSubtraction() );
 
 function getMultiplication() {
     var a = +prompt('введіть число a');
     var b = +prompt('введіть число b');
     var result = a * b;
-    console.log(result);
+	
+	return result;
 }
-getMultiplication();
+console.log( getMultiplication() );
 
 function getQuotient() {
     var a = +prompt('введіть число a');
     var b = +prompt('введіть число b');
     var result = a % b;
-    console.log(result);
+	
+	return result;	
 }
-getQuotient();
+console.log( getQuotient() );
 
 function quadratic() {
     var a = +prompt('введіть число a');
@@ -47,17 +51,16 @@ quadratic();
 
 function guessingGame() {
     if (confirm('Чи бажаєте почати гру?')) {
-        sessionStorage.clear();
-        beginGame();
-    } else {
-        console.log('Сьогодні ви не виграли мільйон, а могли');
-    }
+       sessionStorage.clear();
+       return beginGame();
+    } 
+	
+	return console.log('Сьогодні ви не виграли мільйон, а могли');
 }
 guessingGame();
 
 function beginGame() {
-    var a = Math.random() * 5;
-    var rand = Math.floor(a);
+    var rand = Math.floor(Math.random() * 5);
     var first = +prompt('У вас є 3 спроби, щоб вгадати ціле число від 0 до 5. Введіть число:');
     var second = +prompt('Друга спроба. Введіть число:');
     var third = +prompt('Третя спроба. Введіть число:');
@@ -79,32 +82,38 @@ function beginGame() {
         break;
 
     default:
-        if (confirm('Ваш виграш 0$. Чи бажаєте зіграти ще раз?')) {
-            beginGame();
-        } else {
-            console.log('Дякуємо за гру, ви виграли ' + Number(sessionStorage.getItem('prize')) + '$');
-            break;
-        }
+        getLoss();
+        break;
     }
+}
+
+
+function getLoss() {
+    if (confirm('Ваш виграш 0$. Чи бажаєте зіграти ще раз?')) {
+        return beginGame();
+    } 
+	
+	return console.log('Дякуємо за гру, ваш виграш становить ' + Number(sessionStorage.getItem('prize')) + '$');
 }
 
 function getGameresult() {
     if (confirm('Ви виграли, чи хочете продовжити гру?')) {
-        beginGame();
-    } else {
-        console.log('Дякуємо за гру, ви виграли ' + sessionStorage.getItem('prize') + '$');
-    }
+        return beginGame();
+    } 
+	
+	return console.log('Дякуємо за гру, ваш виграш становить ' + sessionStorage.getItem('prize') + '$');
 }
 
 function getPrizeamount(p) {
     var j = +sessionStorage.getItem('prize');
     var prize;
+    var win;
 
     if (j > 0) {
-        var i = p * 3;
+        win = p * 3;
     } else {
-        i = p;
+        win = p;
     }
 
-    prize = sessionStorage.setItem('prize', j + i);
+    prize = sessionStorage.setItem('prize', j + win);
 }
