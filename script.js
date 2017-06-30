@@ -2,8 +2,8 @@ function getAddition() {
     var a = +prompt('введіть число a');
     var b = +prompt('введіть число b');
     var result = a + b;
-    
-	return result;
+
+    return result;
 }
 console.log( getAddition() );
 
@@ -11,8 +11,8 @@ function getSubtraction() {
     var a = +prompt('введіть число a');
     var b = +prompt('введіть число b');
     var result = a - b;
-	
-	return result;
+
+    return result;
 }
 console.log( getSubtraction() );
 
@@ -20,8 +20,8 @@ function getMultiplication() {
     var a = +prompt('введіть число a');
     var b = +prompt('введіть число b');
     var result = a * b;
-	
-	return result;
+
+    return result;
 }
 console.log( getMultiplication() );
 
@@ -29,8 +29,8 @@ function getQuotient() {
     var a = +prompt('введіть число a');
     var b = +prompt('введіть число b');
     var result = a % b;
-	
-	return result;	
+
+    return result;
 }
 console.log( getQuotient() );
 
@@ -51,11 +51,11 @@ quadratic();
 
 function guessingGame() {
     if (confirm('Чи бажаєте почати гру?')) {
-       sessionStorage.clear();
-       return beginGame();
-    } 
-	
-	return console.log('Сьогодні ви не виграли мільйон, а могли');
+        sessionStorage.clear();
+        return beginGame();
+    }
+
+    return console.log('Сьогодні ви не виграли мільйон, а могли');
 }
 guessingGame();
 
@@ -87,21 +87,20 @@ function beginGame() {
     }
 }
 
-
 function getLoss() {
     if (confirm('Ваш виграш 0$. Чи бажаєте зіграти ще раз?')) {
         return beginGame();
-    } 
-	
-	return console.log('Дякуємо за гру, ваш виграш становить ' + Number(sessionStorage.getItem('prize')) + '$');
+    }
+
+    return console.log('Дякуємо за гру, ваш виграш становить ' + Number(sessionStorage.getItem('prize')) + '$');
 }
 
 function getGameresult() {
     if (confirm('Ви виграли, чи хочете продовжити гру?')) {
         return beginGame();
-    } 
-	
-	return console.log('Дякуємо за гру, ваш виграш становить ' + sessionStorage.getItem('prize') + '$');
+    }
+
+    return console.log('Дякуємо за гру, ваш виграш становить ' + sessionStorage.getItem('prize') + '$');
 }
 
 function getPrizeamount(p) {
