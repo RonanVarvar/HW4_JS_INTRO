@@ -103,16 +103,16 @@ function getGameresult() {
     return console.log('Дякуємо за гру, ваш виграш становить ' + sessionStorage.getItem('prize') + '$');
 }
 
-function getPrizeamount(p) {
-    var j = +sessionStorage.getItem('prize');
+function getPrizeamount(bill) {
+    var amount = +sessionStorage.getItem('prize');
     var prize;
     var win;
 
-    if (j > 0) {
-        win = p * 3;
+    if (amount > 0) {
+        win = bill * 3;
     } else {
-        win = p;
+        win = bill;
     }
 
-    prize = sessionStorage.setItem('prize', j + win);
+    prize = sessionStorage.setItem('prize', amount + win);
 }
