@@ -71,25 +71,25 @@ function compare() {
     var second = +prompt('Друга спроба. Введіть число:');
     var third = +prompt('Третя спроба. Введіть число:');
 
-    switch (rand) {
-		case first:
-			getPrizeamount(10);
-			getGameresult();
-			break;
+    switch(rand) {
+        case first:
+            getPrizeamount(10);
+            getGameresult();
+            break;
 
-		case second:
-			getPrizeamount(5);
-			getGameresult();
-			break;
+        case second:
+            getPrizeamount(5);
+            getGameresult();
+            break;
 
-		case third:
-			getPrizeamount(2);
-			getGameresult();
-			break;
+        case third:
+            getPrizeamount(2);
+            getGameresult();
+            break;
 
-    default:
-        getLoss();
-        break;
+        default:
+            getLoss();
+            break;
     }
 }
 
