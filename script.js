@@ -5,6 +5,7 @@ function getAddition() {
 
     return result;
 }
+
 console.log( getAddition() );
 
 function getSubtraction() {
@@ -14,6 +15,7 @@ function getSubtraction() {
 
     return result;
 }
+
 console.log( getSubtraction() );
 
 function getMultiplication() {
@@ -23,6 +25,7 @@ function getMultiplication() {
 
     return result;
 }
+
 console.log( getMultiplication() );
 
 function getQuotient() {
@@ -32,6 +35,7 @@ function getQuotient() {
 
     return result;
 }
+
 console.log( getQuotient() );
 
 function quadratic() {
@@ -47,39 +51,41 @@ function quadratic() {
         console.log('x1 = ' + res1, 'x2 = ' + res2);
     }
 }
+
 quadratic();
 
 function guessingGame() {
     if (confirm('Чи бажаєте почати гру?')) {
         sessionStorage.clear();
-        return beginGame();
+        return compare();
     }
 
     return console.log('Сьогодні ви не виграли мільйон, а могли');
 }
+
 guessingGame();
 
-function beginGame() {
+function compare() {
     var rand = Math.floor(Math.random() * 5);
     var first = +prompt('У вас є 3 спроби, щоб вгадати ціле число від 0 до 5. Введіть число:');
     var second = +prompt('Друга спроба. Введіть число:');
     var third = +prompt('Третя спроба. Введіть число:');
 
     switch (rand) {
-    case first:
-        getPrizeamount(10);
-        getGameresult();
-        break;
+		case first:
+			getPrizeamount(10);
+			getGameresult();
+			break;
 
-    case second:
-        getPrizeamount(5);
-        getGameresult();
-        break;
+		case second:
+			getPrizeamount(5);
+			getGameresult();
+			break;
 
-    case third:
-        getPrizeamount(2);
-        getGameresult();
-        break;
+		case third:
+			getPrizeamount(2);
+			getGameresult();
+			break;
 
     default:
         getLoss();
@@ -89,7 +95,7 @@ function beginGame() {
 
 function getLoss() {
     if (confirm('Ваш виграш 0$. Чи бажаєте зіграти ще раз?')) {
-        return beginGame();
+        return compare();
     }
 
     return console.log('Дякуємо за гру, ваш виграш становить ' + Number(sessionStorage.getItem('prize')) + '$');
@@ -97,7 +103,7 @@ function getLoss() {
 
 function getGameresult() {
     if (confirm('Ви виграли, чи хочете продовжити гру?')) {
-        return beginGame();
+        return compare();
     }
 
     return console.log('Дякуємо за гру, ваш виграш становить ' + sessionStorage.getItem('prize') + '$');
